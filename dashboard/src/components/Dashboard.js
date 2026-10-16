@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import Apps from "./Apps";
-import Funds from "./Funds";
+import Apps from "./App";
+import Funds from "./Fund";
 import Holdings from "./Holdings";
 
 import Orders from "./Orders";

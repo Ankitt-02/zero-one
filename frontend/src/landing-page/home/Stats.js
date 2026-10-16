@@ -1,59 +1,91 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Stats() {
+  const valueProps = [
+    {
+      title: "Customer-first by design",
+      description:
+        "Zero-One is engineered around investor outcomes, not vanity metrics. Every feature, from real-time charts to fast order routing, prioritizes clarity and execution speed.",
+    },
+    {
+      title: "No spam, noise, or dark patterns",
+      description:
+        "No unsolicited stock tips, no aggressive gamification, and no artificial urgency. Just clean, reliable market tools designed to support your discipline.",
+    },
+    {
+      title: "An interconnected ecosystem",
+      description:
+        "More than a basic broker: a unified financial suite connecting day trading, long-term investments, algorithmic APIs, and deep portfolio analytics.",
+    },
+    {
+      title: "Disciplined capital stewardship",
+      description:
+        "We believe technology should encourage disciplined risk management and informed decisions, not hyperactive churning.",
+    },
+  ];
+
   return (
-    <div className="container p-5">
-      <div className="row p-5">
-        <div className="col-6 p-5">
-          <h1 className="fs-2 mb-5">Trust with confidence</h1>
+    <section className="home-section py-5" style={{ background: "var(--bg-secondary)" }}>
+      <div className="container">
+        <div className="row align-items-center g-5">
+          <div className="col-lg-6 col-12">
+            <span className="home-section-tag">Core Principles</span>
+            <h2
+              className="fw-bold mb-4"
+              style={{
+                fontSize: "clamp(1.75rem, 3vw, 2.35rem)",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Trust Built on Absolute Transparency
+            </h2>
 
-          <h2 className="fs-4">Customer-first always</h2>
-          <p className="text-muted">
-            Zero One is built with a simple mindset — users come before metrics.
-            Everything from the interface to the experience is designed to feel
-            smooth, transparent, and genuinely useful for modern investors.
-          </p>
+            <div className="pe-lg-4">
+              {valueProps.map((item, idx) => (
+                <div key={idx} className="home-value-item">
+                  <h3 className="fs-5 fw-semibold mb-2" style={{ color: "var(--text-primary)" }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-secondary small mb-0" style={{ lineHeight: 1.6 }}>
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-          <h2 className="fs-4">No spam or gimmicks</h2>
-          <p className="text-muted">
-            No random notifications screaming “HOT STOCK ALERT 🚀” at 2AM. No
-            fake urgency. No casino-style investing experience. Just clean apps
-            that let you trade and invest without frying your attention span.
-          </p>
+          <div className="col-lg-6 col-12 text-center">
+            <div
+              className="p-3 p-md-4 rounded-4 mb-4"
+              style={{
+                background: "var(--bg-card)",
+                border: "1px solid var(--border-color)",
+                boxShadow: "var(--card-shadow)",
+              }}
+            >
+              <img
+                src="media/images/ecosystem.png"
+                alt="Zero-One Ecosystem Overview"
+                className="img-fluid"
+                style={{ maxHeight: "360px", width: "100%", objectFit: "contain" }}
+              />
+            </div>
 
-          <h2 className="fs-4">The Zero-One universe</h2>
-          <p className="text-muted">
-            Zero One is more than a trading platform. It’s an ecosystem built
-            around modern investing, technology, and tools that actually solve
-            problems instead of adding fifteen more dashboard tabs.
-          </p>
-
-          <h2 className="fs-4">Do better with money</h2>
-          <p className="text-muted">
-            We believe good platforms should help users make smarter decisions,
-            not just more transactions. Because watching candlestick charts all
-            day does not automatically make any of us Warren Buffett.
-          </p>
-        </div>
-        <div className="col-6 p-5">
-          <img
-            src="media/images/ecosystem.png"
-            alt="stats"
-            style={{ width: "165%" }}
-          ></img>
-          <div className="text-center">
-            <a href="demo" className="mx-5" style={{ textDecoration: "none" }}>
-              Explore our products{" "}
-              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-            </a>
-            <a href="Demo" style={{ textDecoration: "none" }}>
-              Try C⌀re Demo{" "}
-              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-            </a>
+            <div className="d-flex flex-wrap justify-content-center gap-4">
+              <Link to="/product" className="home-link">
+                <span>Explore all ecosystem products</span>
+                <i className="fa fa-arrow-right small"></i>
+              </Link>
+              <a href="http://localhost:3001" className="home-link">
+                <span>Open Trading Console</span>
+                <i className="fa fa-external-link small"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

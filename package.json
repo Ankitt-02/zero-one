@@ -1,0 +1,13 @@
+{
+  "name": "zero-one",
+  "version": "1.0.0",
+  "description": "Zero-One — Modern Investment & Trading Platform",
+  "scripts": {
+    "start:backend": "cd backend && node index.js",
+    "start:frontend": "cd frontend && npm start",
+    "start:dashboard": "cd dashboard && npm start",
+    "build:frontend": "cd frontend && npm run build",
+    "build:dashboard": "cd dashboard && npm run build",
+    "test:backend": "cd backend && npm test"
+  }
+}

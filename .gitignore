@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment files and credentials
+.env
+.env.*
+*.env
+!.env.example
+!*.env.example
+backend/.env
+dashboard/.env
+frontend/.env
+
+# Production build directories
+build/
+dist/
+frontend/build/
+dashboard/build/
+
+# OS and filesystem artifacts
+.DS_Store
+*/.DS_Store
+*.log
+*.sock
+
+# Test coverage
+coverage/
+.nyc_output/
